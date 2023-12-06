@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -40,10 +40,10 @@ spec:
           limits:
             cpu: 500m
             memory: 2500Mi
-      serviceAccountName: prometheus    
+      serviceAccountName: prometheus
       volumes:
       - name: data
         emptyDir: {}
       - name: config-volume
         configMap:
-          name: prometheus-config   
+          name: prometheus-config
